@@ -1,6 +1,7 @@
 <li>
  <%= user_task.description %>
- <%= user_task.due %>
- <%= link_to 'Edit', edit_user_task_path(user_task), remote: true %>
- <%= link_to 'Delete', user_task, remote: true, method: :delete, data: {confirm: 'Are you sure?'} %>
+ <%= user_task.due.stamp ('November 2, 2014') %>
+ <%= link_to 'Edit', edit_user_task_path(user_task), remote: true, class: "btn btn-xs btn-primary" %>
+ <%= link_to 'Delete', user_task, remote: true, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-xs btn-danger" %>
 </li>
+

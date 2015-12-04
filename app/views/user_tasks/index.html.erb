@@ -6,6 +6,6 @@
 
 <div id="tasks">
  <ul>
-   <%= render @user_tasks %>
+   <%= render @user_tasks.order("due") %>
  </ul>
 </div>
