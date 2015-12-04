@@ -1,7 +1,11 @@
-<li>
- <%= user_task.description %>
- <%= user_task.due.stamp ('November 2, 2014') %>
- <%= link_to 'Edit', edit_user_task_path(user_task), remote: true, class: "btn btn-xs btn-primary" %>
- <%= link_to 'Delete', user_task, remote: true, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-xs btn-danger" %>
-</li>
+<div class="well">
+  <span class='pull-right text-muted'>
+    <small><em><%= user_task.due.try(:stamp, 'November 2, 2014') %></em></small>
+  </span>
 
+  <span>
+    <%= link_to user_task.description, user_task, remote: true, method: :delete, data: {confirm: 'Are you sure?'} %>
+  </span>
+
+  <% link_to fa_icon('pencil'), edit_user_task_path(user_task), remote: true %>
+</div>
