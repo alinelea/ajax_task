@@ -1,13 +1,12 @@
-<div class="well">
-  <span class='pull-right text-muted'>
-    <small><em><%= user_task.due.try(:stamp, 'November 2, 2014') %></em></small>
-  </span>
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Due: <%= user_task.due.try(:stamp, 'November 2, 2014') %> </h4>
+  </div>
 
-  <span class="task">
-    <%= link_to user_task.description, user_task, remote: true, method: :delete, data: {confirm: 'Are you sure?'} %>
-
-
-    <% link_to fa_icon('pencil'), edit_user_task_path(user_task), remote: true %>
-  </span>
-
+    <div class="panel-body">
+      <%= user_task.description %>
+      <span class="pull-right">
+        <%= link_to fa_icon('pencil'), edit_user_task_path(user_task), remote: true %>
+        <%= link_to fa_icon('trash-o'), user_task, remote: true, method: :delete, data: {confirm: 'Are you sure?'} %>
+      </span>
+    </div>
 </div>
