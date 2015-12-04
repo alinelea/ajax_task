@@ -3,9 +3,11 @@
     <small><em><%= user_task.due.try(:stamp, 'November 2, 2014') %></em></small>
   </span>
 
-  <span>
+  <span class="task">
     <%= link_to user_task.description, user_task, remote: true, method: :delete, data: {confirm: 'Are you sure?'} %>
+
+
+    <% link_to fa_icon('pencil'), edit_user_task_path(user_task), remote: true %>
   </span>
 
-  <% link_to fa_icon('pencil'), edit_user_task_path(user_task), remote: true %>
 </div>

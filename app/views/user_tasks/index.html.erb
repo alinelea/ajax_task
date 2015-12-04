@@ -1,13 +1,18 @@
-<!-- TODO: add fancy notices -->
+<div class="row">
+  <div class="form-box">
+    <div class="col-xs-3 col-xs-offset-1">
+      <p class="text-center">
+        <%= link_to fa_icon('plus', text: 'Add Task'), new_user_task_path, remote: true, class: 'btn btn-primary', id: 'add-task-button' %></p>
 
-<h1>Tasks</h1>
+      <div id="task-form"></div>
+    </div>
+  </div>
 
-<%= link_to 'New User task', new_user_task_path, remote: true, class: "btn btn-default" %>
 
-<div id="task-form"></div>
-
-<div id="tasks">
- <ul>
-   <%= render @user_tasks.order("due") %>
- </ul>
+  <div class="col-xs-7">
+    <h2>To Do List</h2>
+    <div id="tasks">
+       <%= render @user_tasks %>
+    </div>
+  </div>
 </div>
