@@ -1,5 +1,6 @@
 class UserTasksController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_task
+  before_action :authenticate!
   before_action :all_tasks, only: [:index, :create, :update, :destroy]
   before_action :set_user_task, only: [:show, :edit, :update, :destroy]
 

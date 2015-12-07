@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
 
+  def new
+  end
+
   def create
     auth = request.env["omniauth.auth"]
     # Rails magic! go look in our database for a user with that provider and uid. If they don't exist yet, create them.
